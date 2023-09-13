@@ -63,7 +63,7 @@ always@(posedge i_clk or posedge i_rst)
 begin
     if (i_rst)
         r_user_data <= 'd0;
-    else if (w_user_active)
+    else if (w_user_active || r_run)
         r_user_data <= i_user_data << 1 ;
     else
         r_user_data <= r_user_data;
@@ -190,3 +190,6 @@ end
 
 endmodule
 
+// 主要在于确定控制关系，先通过输入确定run的拉高，run为高，两个计数器开始工作，工作到一个为7一个0时，run拉低
+// run就确定了，run运行过程中，对in_data做移位，同时也能控制ready，还有cs，
+// 有run和spi_cnt，那么mosi也能确定，读数据的valid也可以确定，spi_clk也可以确定
