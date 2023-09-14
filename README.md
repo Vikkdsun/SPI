@@ -1,2 +1,2 @@
 # SPI
-spi project by verilog
+spi drive FLASH project by verilog
