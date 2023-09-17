@@ -1,5 +1,6 @@
 # SPI
 spi drive FLASH project by verilog
+Create Date: 2023/9/15 22:45
 
 ### SPI驱动FLASH
 通过TYPE控制写指令、读数据、写数据
