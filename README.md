@@ -12,8 +12,10 @@ Create Date: 2023/9/15 22:45
 drive文件有注释，是写代码的心路历程，容易理解
 
 ### 更新log
-2023/9/18  0:27   :更新FLASH_CTRL模块
+2023/9/18  0:27  :更新FLASH_CTRL模块
 
 2023/9/18 9:18  :更新SPI_DRIVE和FLASH_CTRL，修改bug
+
+2023/9/18 9:49  :更新FLASH_DRIVE模块，封装SPI_DRIVE和FLASH_CTRL模块
 
 等待更新...
