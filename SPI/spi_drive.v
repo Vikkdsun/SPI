@@ -293,7 +293,7 @@ always@(posedge i_clk or posedge i_rst)
 begin
     if (i_rst)
         ro_user_read_valid <= 'd0;
-    else if (r_user_op_type == P_OP_READ && r_cnt >= r_user_op_len - 1 && r_read_cnt == P_READ_DATA_WIDTH - 1 && r_spi_cnt)
+    else if (r_user_op_type == P_OP_READ && r_cnt >= r_user_op_len - 1 && r_read_cnt == P_READ_DATA_WIDTH - 2 && r_spi_cnt)
         ro_user_read_valid <= 'd1;
     else 
         ro_user_read_valid <= 'd0;
