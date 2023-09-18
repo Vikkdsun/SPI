@@ -17,12 +17,12 @@ module flash_drive(
     output                              o_operation_valid                   ,//操作握手有效
     input                               i_operation_ready                   ,//操作握手准备
 
-    output  [P_DATA_WIDTH - 1 :0]       o_write_data                        ,//写数据
+    output  [7 :0]                      o_write_data                        ,//写数据
     output                              o_write_sop                         ,//写数据-开始信号
     output                              o_write_eop                         ,//写数据-结束信号
     output                              o_write_valid                       ,//写数据-有效信号
 
-    input [P_DATA_WIDTH - 1 :0]         i_read_data                         ,//读数据
+    input [7 :0]                        i_read_data                         ,//读数据
     input                               i_read_sop                          ,//读数据-开始信号
     input                               i_read_eop                          ,//读数据-结束信号
     input                               i_read_valid                        ,//读数据-有效信号
