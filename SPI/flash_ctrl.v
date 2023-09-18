@@ -80,7 +80,7 @@ reg [1 :0]                                                                      
 reg [15:0]                                                                      ro_user_op_len                                                                  ;     
 reg [15:0]                                                                      ro_user_clk_len                                                                 ;         
 reg                                                                             ro_user_op_valid                                                                ;     
-reg [P_DATA_WIDTH - 1 :0]                                                       ro_user_write_data                                                              ;   
+reg [P_DATA_WIDTH - 1 :0]                                                       ro_user_write_data       // 这个没用上 因为FIFO输出需要wire                                                           ;   
 
 // 看ready(spi)上升沿
 reg                                                                             ri_user_op_ready                                                                ;
@@ -313,7 +313,7 @@ FLASH_CTRL_FIFO_DATA FLASH_CTRL_FIFO_DATA_U0 (
     .din      (ri_write_data        ),               // 注意 输入到FIFO的数据要打一拍
     .wr_en    (ri_write_valid       ),  
     .rd_en    (i_user_write_req     ),            // 读使能（SPI什么时候可以取数据）  答：req
-    .dout     (ro_user_write_data   ),               
+    .dout     (o_user_write_data    ),               // FIFO输出要是wire型
     .full     (),                           // 由于写数据和写多少是用户决定的 然后在一开始就传给spi时钟数 所以不会存在spi要数据时没有数据 或者FIFO满了 不能写的情况
     .empty    ()  
 );
